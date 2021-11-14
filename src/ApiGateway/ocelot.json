@@ -6,7 +6,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": "5001"
+          "Port": "44350"
         }
       ],
       "UpstreamPathTemplate": "/movies",
@@ -22,7 +22,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": "5001"
+          "Port": "44350"
         }
       ],
       "UpstreamPathTemplate": "/movies/{id}",

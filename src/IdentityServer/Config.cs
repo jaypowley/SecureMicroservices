@@ -30,7 +30,8 @@ namespace IdentityServer
                         IdentityServerConstants.StandardScopes.Address,
                         IdentityServerConstants.StandardScopes.Email,
                         Constant.Scope_Role_Value,
-                        Constant.Scope_Movie_Api_Value
+                        Constant.Scope_Movie_Api_Value,
+                        Constant.Movies_Client_Id_Key
                     }
                 }
             };
