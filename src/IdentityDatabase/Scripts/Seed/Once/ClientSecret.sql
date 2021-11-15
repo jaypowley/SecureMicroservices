@@ -31,8 +31,7 @@ WHEN NOT MATCHED BY TARGET THEN
 WHEN NOT MATCHED BY SOURCE THEN 
  DELETE;
 
-DECLARE @mergeError int
- , @mergeCount int
+
 SELECT @mergeError = @@ERROR, @mergeCount = @@ROWCOUNT
 IF @mergeError != 0
  BEGIN
@@ -42,10 +41,9 @@ ELSE
  BEGIN
  PRINT '[ClientSecret] rows affected by MERGE: ' + CAST(@mergeCount AS VARCHAR(100));
  END
-GO
+
 
 
 
 SET IDENTITY_INSERT [ClientSecret] OFF
 SET NOCOUNT OFF
-GO

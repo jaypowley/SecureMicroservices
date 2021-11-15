@@ -19,21 +19,21 @@ Post-Deployment Script Template
 GO
 
 --Seed Once table(s)
-If Not Exists(Select * From "dbo.Client") -- Need some check to see if this is the first release of the db 
+If Not Exists(Select * From dbo.Client) -- Need some check to see if this is the first release of the db 
 Begin
     --Go statements are not permitted inside IF Blocks so they must be removed from all scripts internal to this block.
     --variable scope is limited to the next GO statement so the removal of the GO Statements make @mergeError and @mergeCount in scope of all scripts in this block
     DECLARE @mergeError int, @mergeCount int
 
-    :r  $(seedOnceDataPath)"dbo.Client.sql"
-    :r  $(seedOnceDataPath)"dbo.ClientGrantType.sql"
-    :r  $(seedOnceDataPath)"dbo.ClientPostLogoutRedirectUri.sql"
-    :r  $(seedOnceDataPath)"dbo.ClientRedirectUri.sql"
-    :r  $(seedOnceDataPath)"dbo.ClientScope.sql"
-    :r  $(seedOnceDataPath)"dbo.ClientSecret.sql"
-    :r  $(seedOnceDataPath)"dbo.ApiScope.sql"
-    :r  $(seedOnceDataPath)"dbo.IdentityResource.sql"
-    :r  $(seedOnceDataPath)"dbo.IdentityResourceClaim.sql"
+    :r  $(seedOnceDataPath)"Client.sql"
+    :r  $(seedOnceDataPath)"ClientGrantType.sql"
+    :r  $(seedOnceDataPath)"ClientPostLogoutRedirectUri.sql"
+    :r  $(seedOnceDataPath)"ClientRedirectUri.sql"
+    :r  $(seedOnceDataPath)"ClientScope.sql"
+    :r  $(seedOnceDataPath)"ClientSecret.sql"
+    :r  $(seedOnceDataPath)"ApiScope.sql"
+    :r  $(seedOnceDataPath)"IdentityResource.sql"
+    :r  $(seedOnceDataPath)"IdentityResourceClaim.sql"
 End
 
 --Seed Always table(s)
